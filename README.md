@@ -77,3 +77,6 @@ So that I can know what events are organized in which city
 	- Given: the user is on the events page
 	- When: the user click to see a chart of the upcoming events in each city
 	- Then: the user should see a chart with the number of upcoming events in each city 
+
+## Serverless functions
+Ihis app uses serverless functions for scalability to help ensure a smooth user experience and user authentication by generating an authorization token so the user is able to see the event data from the Google API. By using the serverless provider AWS Lambda this app will be easier and faster to deploy, as well as cost efficient due to only paying for the resources we are using. 
