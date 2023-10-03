@@ -36,8 +36,8 @@ So that I can see/hide the details of an event
 
 **Feature 3: Specify Number of Events**
 As a user,
-I should be able to specify number of events
-So that I can see a specific number of events at once
+I should be able to specify number of events I want to view
+So that I can see a more or fewer events at once
 - Scenario 1: When user hasn’t specified a number, 32 events are shown by default.
 	- Given: the user hasn’t specified or filtered the number of events
 	- When: the user is on the home page
@@ -50,7 +50,7 @@ So that I can see a specific number of events at once
 **Feature 4: Use the App When Offline**
 As a user, 
 I should be able to use the app when offline
-So that I can see data when I am offline
+So that I can see the events I viewed the last time I was online
 - Scenario 1: Show cached data when there’s no internet connection.
 	- Given: the user has no internet connection
 	- When: the user opens the app
@@ -62,7 +62,7 @@ So that I can see data when I am offline
 
 **Feature 5: Add an App Shortcut to the Home Screen**
 As a user, 
-I should be able to install the app as a shortcut on my device home screen
+I should be able to add the app shortcut to my device home screen
 So that I can open the app directly on my device home screen 
 - Scenario 1: User can install the meet app as a shortcut on their device home screen.
 	- Given: the user wants to install the app 
@@ -71,8 +71,8 @@ So that I can open the app directly on my device home screen
 
 **Feature 6: Display Charts Visualizing Event Details**
 As a user, 
-I should be able to display a chart visualizing event details
-So that I can see a chart with the number of events in each city
+I should be able to see a chart visualizing upcoming events in each city
+So that I can know what events are organized in which city
 - Scenario 1: Show a chart with the number of upcoming events in each city.
 	- Given: the user is on the events page
 	- When: the user click to see a chart of the upcoming events in each city
