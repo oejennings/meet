@@ -10,7 +10,7 @@ provider:
   environment: 
     CLIENT_ID: ${file(config.json):CLIENT_ID}
     CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
-    CALENDER_ID: ${file(config.json):CALDENDER_ID}
+    CALENDER_ID: ${file(config.json):CALENDER_ID}
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
