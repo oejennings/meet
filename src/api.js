@@ -58,6 +58,17 @@ export const getEvents = async () => {
   }
 };
 
+const getToken = async (code) => {
+  const encodeCode = encodeURIComponent(code);
+  const response = await fetch(
+    'https://9xtzmebnpd.execute-api.us-east-1.amazonaws.com/dev/api/token' + '/' + encodeCode
+  );
+  const { access_token } = await response.json();
+  access_token && localStorage.setItem("access_token", access_token);
+
+  return access_token;
+};
+
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
   const tokenCheck = accessToken && (await checkToken(accessToken));
