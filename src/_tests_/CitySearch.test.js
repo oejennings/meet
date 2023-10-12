@@ -3,13 +3,13 @@
 import { render, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { extractLocations, getEvents } from '../api';
-import App from '../App';
 import CitySearch from '../components/CitySearch';
+import App from '../App';
 
 describe('<CitySearch /> component', () => {
     let CitySearchComponent;
   beforeEach(() => {
-    CitySearchComponent = render(<CitySearch />);
+    CitySearchComponent = render(<CitySearch allLocations={[]}/>);
   });
 
   test('renders text input', () => {

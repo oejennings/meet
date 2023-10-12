@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <CitySearch />
+      <CitySearch allLocations={allLocations}/>
       {/* <NumberOfEvents /> */}
       <EventList events={events} />
     </div>
