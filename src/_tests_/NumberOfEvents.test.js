@@ -1,10 +1,11 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import NumberOfEvents from '../components/NumberOfEvents';
 
 describe('<NumberOfEvents /> Component', () => {
     let NumberOfEventsComponent; 
     beforeEach(() => {
-        NumberOfEventsComponent = render( <NumberofEvents  /> );
+        NumberOfEventsComponent = render( <NumberOfEvents /> );
     });
     
     test('render text input', () => {
