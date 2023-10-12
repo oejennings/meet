@@ -8,6 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <CitySearch />
+      <NumberOfEvents />
       <EventList />
     </div>
   );
