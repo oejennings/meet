@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div className="App">
       <CitySearch />
-      <NumberOfEvents />
+      {/* <NumberOfEvents /> */}
       <EventList events={events} />
     </div>
   );
