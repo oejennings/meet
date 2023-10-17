@@ -1,5 +1,6 @@
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import { render, within, waitFor } from '@testing-library/react';
+import { userEvent } from '@testing-library/user-event';
 import App from '../App';
 import { getEvents } from '../mock-data';
 
@@ -27,16 +28,23 @@ defineFeature(feature, test => {
         });
     });
     test('User should see a list of suggestions when they search for a city.', ({ given, when, then }) => {
-        given('the main page is open', () => {
-
+        let AppComponent;
+            given('the main page is open', () => {
+                AppComponent = render(<App />);
         });
 
-        when('user starts typing in the city textbox', () => {
-
+        let CitySearchDOM;
+            when('user starts typing in the city textbox', async () => {
+                const user = userEvent.setup();
+                const AppDOM = AppComponent.container.firstChild;
+                CitySearchDOM = AppDOM.querySelector('#city-search');
+                const citySearchInput = within(CitySearchDOM).queryByRole('textbox');  
+                await user.type(citySearchInput, "Berlin");
         });
 
-        then('the user should recieve a list of cities (suggestions) that match what they have typed', () => {
-
+        then('the user should recieve a list of cities (suggestions) that match what they have typed', async () => {
+            const suggestionListItems = within(CitySearchDOM).queryAllByRole('listitem'); 
+            expect(suggestionListItems).toHaveLength(2);
         });
     });
     test('User can select a city from the suggested list.', ({ given, and, when, then }) => {
