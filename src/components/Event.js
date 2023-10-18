@@ -10,7 +10,7 @@ const Event = ({ event }) => {
         <p>{event.created}</p>
         <p>{event.location}</p>
         <button 
-          className="detailsbtn"
+          className="details-btn"
           onClick= {() => {
             setShowDetails(!showDetails)
           }}
