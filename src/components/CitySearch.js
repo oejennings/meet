@@ -28,12 +28,13 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
         }
         setInfoAlert(infoText);
       };
-      
+
     const handleItemClicked = (event) => {
         const value = event.target.textContent;
         setQuery(value);
         setShowSuggestions(false); // to hide the list
         setCurrentCity(value);
+        setInfoAlert("");
       };
 
     return (
