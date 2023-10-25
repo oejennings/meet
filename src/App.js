@@ -19,7 +19,7 @@ const App = () => {
   const [warningAlert, setWarningAlert] = useState("");
 
   useEffect(() => {
-    if (navigator.online) {
+    if (navigator.onLine) {
       setWarningAlert("");
     } else {
       setWarningAlert("You are currently offline.")
