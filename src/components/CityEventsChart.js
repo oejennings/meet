@@ -21,7 +21,7 @@ import {
         const data = allLocations.map((location) => {
         const count = events.filter((event) => event.location === location).length
           const city = location.split(', ')[0]
-          return { count, number };
+          return { city, count };
         })
         return data;
       };
@@ -37,8 +37,8 @@ import {
             }}
           >
             <CartesianGrid />
-            <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-            <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+            <XAxis type="category" dataKey="city" name="City" />
+            <YAxis type="number" dataKey="count" name="Number of Events" allowDecimals={false} />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
             <Scatter name="A school" data={data} fill="#8884d8" />
           </ScatterChart>
