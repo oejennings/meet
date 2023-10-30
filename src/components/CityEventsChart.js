@@ -20,7 +20,7 @@ import {
     const getData = () => {
         const data = allLocations.map((location) => {
         const count = events.filter((event) => event.location === location).length
-          const city = location.split(', ')[0]
+          const city = location.split((/, | - /))[0]
           return { city, count };
         })
         return data;
@@ -32,7 +32,7 @@ import {
             margin={{
               top: 20,
               right: 20,
-              bottom: 20,
+              bottom: 60,
               left: 20,
             }}
           >
