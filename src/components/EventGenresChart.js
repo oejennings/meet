@@ -11,6 +11,7 @@ import {
 const EventGenresChart = ({ events }) => {
     const [data, setData] = useState([]);
     const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
+    const colors = ["#6495ED", "#0000FF", "#7B68EE", "#9370DB", "#4169E1"]
 
     useEffect(() => {
         setData(getData());
@@ -36,7 +37,7 @@ const EventGenresChart = ({ events }) => {
           <text
             x={x}
             y={y}
-            fill="#8884d8"
+            fill={colors[index]}
             textAnchor={x > cx ? 'start' : 'end'}
             dominantBaseline="central"
           >
@@ -55,7 +56,11 @@ const EventGenresChart = ({ events }) => {
               labelLine={false}
               label={renderCustomizedLabel}
               outerRadius={130}           
-            />
+            >
+            {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={colors[index]} />
+            ))}  
+            </Pie>
           </PieChart>
         </ResponsiveContainer>
       );
